@@ -16,13 +16,6 @@ jobs:
       - name: Print GITHUB_RUN_ID
         run: echo "Ref name is $GITHUB_RUN_ID"
 
-      - name: Create empty JSON file in workspace
-        run: |
-          FILE_PATH="$GITHUB_WORKSPACE/store/request/request.json"
-          mkdir -p "$(dirname "$FILE_PATH")"
-          touch "$FILE_PATH"
-          echo "File created at: $FILE_PATH"
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
@@ -37,7 +30,7 @@ jobs:
           tar -tf output.tar
 
       - name: Run Trivy scan
-        uses: cloudbees-io/trivy-github-test@main
+        uses: cloudbees-io/trivy-github-test@test
         with:
           binary-tar-path: output.tar
           cloudbees_pat_token: ${{ secrets.CLOUDBEES_QA_PAT }}
