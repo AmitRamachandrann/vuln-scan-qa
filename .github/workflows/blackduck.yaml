@@ -25,8 +25,8 @@ jobs:
       - name: Blackduck scan
         uses: cloudbees-io/blackduck-github-test@main
         with:
-          cloudbees_pat_token: ${{ secrets.CLOUDBEES_PREPROD_PAT }}
-          cloudbees_api_url: ${{ vars.CLOUDBEES_PREPROD_API_URL }}
+          cloudbees_pat_token: ${{ secrets.CLOUDBEES_QA_PAT }}
+          cloudbees_api_url: ${{ vars.CLOUDBEES_QA_API_URL }}
           blackduck_server_url: ${{ vars.BLACKDUCK_SERVER_URL }}
           blackduck_api_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
 
