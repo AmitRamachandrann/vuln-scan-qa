@@ -3,7 +3,7 @@ name: Coverity scan
 on:
   push:
     branches:
-    - mains
+    - main
 
 jobs:
   coverity-codescan:
@@ -28,7 +28,7 @@ jobs:
           cloudbees_api_url: ${{ vars.CLOUDBEES_QA_API_URL }}
           step_id: "coverity-scan"
           server-url: ${{ vars.COVERITY_SERVER_URL }}
-          api-token: ${{ secrets.COVERITY_API_TOKEN_V }}
+          api-token: ${{ secrets.COVERITY_API_TOKEN }}
 
 
 
