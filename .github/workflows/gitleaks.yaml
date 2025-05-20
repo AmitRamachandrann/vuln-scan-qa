@@ -24,6 +24,6 @@ jobs:
       - name: Gitleaks scan
         uses: cloudbees-io/gitleaks-github-test@main
         with:
-          cloudbees_pat_token: ${{ secrets.CLOUDBEES_QA_PAT }}
-          cloudbees_api_url: ${{ vars.CLOUDBEES_QA_API_URL }}
+          cloudbees-pat: ${{ secrets.CLOUDBEES_QA_PAT }}
+          cloudbees-url: ${{ vars.CLOUDBEES_QA_API_URL }}
 
